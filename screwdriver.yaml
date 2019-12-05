@@ -1,0 +1,9 @@
+shared:
+    image: node:12
+
+jobs:
+    main:
+        requires: [~pr, ~commit]
+        steps:
+            - generate-artifacts:  find ./artifacts -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
+            - copy-to-artifacts-dir: echo $SD_ARTIFACTS_DIR && cp -r ./artifacts $SD_ARTIFACTS_DIR
