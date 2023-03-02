@@ -11,3 +11,4 @@ jobs:
         requires: [~pr]
         steps:
             - hello: echo hello
+            - hello1: echo hello1
