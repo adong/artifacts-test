@@ -12,3 +12,4 @@ jobs:
         steps:
             - hello: echo hello
             - world: echo world
+            - setTest: meta set tests.resultsUrl $SD_ARTIFACTS_DIR/artifacts/index.html
