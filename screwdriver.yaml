@@ -9,7 +9,7 @@ jobs:
             - copy-to-artifacts-dir: echo $SD_ARTIFACTS_DIR && cp -r ./artifacts $SD_ARTIFACTS_DIR
             - setTest: |
                 meta set tests.results '10/10'
-                meta set tests.resultsUrl $SD_ARTIFACTS_DIR/artifacts/index.html
+                meta set tests.resultsUrl /artifacts/artifacts/index.html
 
     something:
         requires: [~pr]
