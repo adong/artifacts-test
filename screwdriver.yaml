@@ -7,9 +7,10 @@ jobs:
         steps:
             - generate-artifacts:  find ./artifacts -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'
             - copy-to-artifacts-dir: echo $SD_ARTIFACTS_DIR && cp -r ./artifacts $SD_ARTIFACTS_DIR
+            - setTest: meta set tests.resultsUrl $SD_ARTIFACTS_DIR/artifacts/index.html
+
     something:
         requires: [~pr]
         steps:
             - hello: echo hello
             - world: echo world
-            - setTest: meta set tests.resultsUrl $SD_ARTIFACTS_DIR/artifacts/index.html
